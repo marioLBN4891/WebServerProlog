@@ -1,11 +1,38 @@
-package restfull;
+package prolog;
+//tabstop=4
+//*****************************************************************************/
+// Project: jpl
+//
+// File:    $Id$
+// Date:    $Date$
+// Author:  Fred Dushin <fadushin@syr.edu>
+//          
+//
+// Description:
+//    
+//
+// -------------------------------------------------------------------------
+// Copyright (c) 1998 Fred Dushin
+//                    All rights reserved.
+// 
+// This library is free software; you can redistribute it and/or
+// modify it under the terms of the GNU Library Public License
+// as published by the Free Software Foundation; either version 2
+// of the License, or (at your option) any later version.
+// 
+// This library is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU Library Public License for more details.
+//*****************************************************************************/
+
 
 
 import java.util.Hashtable;
 import jpl.Query;				// empirically, we need this, but I don't know why...
 import jpl.*;
 
-public class Test
+public class Prolog
 {
 	public static void
 	main()
@@ -13,14 +40,6 @@ public class Test
 	 //	JPL.init();				// we don't need this with the current JPL (lazy init-on-demand)
 		
 		run_tests();
-	}
-	
-	public static void
-	main2()
-	{
-		test_1();
-		test_2();
-		test_3();
 	}
 	
 	static void
@@ -47,8 +66,8 @@ public class Test
 	{
 		System.out.print( "test 0..." );
 
-		
-		Query query = new Query("consult('C:/SVILUPPO/eclipse LUNA/cartellaProgetti/ProvaProlog/src/pl/test.pl')"); 
+		Query query = 
+			new Query("consult('src/java/test.pl')");
 
 		if ( !query.hasSolution() ){
 			System.out.println( "consult('test.pl') failed" );
